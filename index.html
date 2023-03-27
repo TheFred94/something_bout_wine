@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
+    <main></main>
+    <template>
+      <article>
+        <h2>NAME HERE</h2>
+        <button class="update">UPDATE WINE</button>
+        <button class="delete">DELETE WINE</button>
+      </article>
+    </template>
     <button id="post">POST</button>
     <script>
       document.querySelector("#post").addEventListener("click", post);
       function get() {
-        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines", {
+        fetch("https://yqrjgrrxikmrclnsgvsu.supabase.co/rest/v1/wines", {
           method: "get",
           headers: {
             apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
@@ -49,7 +58,7 @@
           isGood: true,
         };
 
-        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines", {
+        fetch("https://yqrjgrrxikmrclnsgvsu.supabase.co/rest/v1/wines", {
           method: "post",
           headers: {
             "Content-Type": "application/json",
@@ -64,7 +73,7 @@
 
       //DELETE
       function deleteWine(id) {
-        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines?id=eq." + id, {
+        fetch("https://yqrjgrrxikmrclnsgvsu.supabase.co/rest/v1/wines?id=eq." + id, {
           method: "delete",
           headers: {
             "Content-Type": "application/json",
@@ -82,7 +91,7 @@
           isGood: true,
         };
 
-        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines?id=eq." + id, {
+        fetch("https://yqrjgrrxikmrclnsgvsu.supabase.co/rest/v1/wines?id=eq." + id, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

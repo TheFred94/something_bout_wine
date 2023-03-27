@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="post">POST</button>
+    <script>
+      document.querySelector("#post").addEventListener("click", post);
+      function get() {
+        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines", {
+          method: "get",
+          headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
+          },
+        })
+          .then((e) => e.json())
+          .then((data) => {
+            const t = document.querySelector("template").content;
+            document.querySelector("main").innerHTML = "";
+            data.forEach((wine) => {
+              const copy = t.cloneNode(true);
+              copy.querySelector("h2").textContent = wine.name;
+              copy.querySelector("button.delete").addEventListener("click", () => {
+                deleteWine(wine.id);
+              });
+              copy.querySelector("button.update").addEventListener("click", () => {
+                patch(wine.id);
+              });
+              document.querySelector("main").appendChild(copy);
+            });
+          });
+      }
+      get();
+
+      function post() {
+        const newWine = {
+          name: "Peter's Wine",
+          grapes: ["pinor lightblue"],
+          year: 1986,
+          type: "white",
+          origin: {
+            country: "Denmark",
+            region: "Nordsjælland",
+          },
+          isGood: true,
+        };
+
+        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
+          },
+          body: JSON.stringify(newWine),
+        })
+          .then((e) => e.json())
+          .then((e) => get());
+      }
+
+      //DELETE
+      function deleteWine(id) {
+        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines?id=eq." + id, {
+          method: "delete",
+          headers: {
+            "Content-Type": "application/json",
+            Prefer: "return=representation",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
+          },
+        })
+          .then((e) => e.json())
+          .then((e) => get());
+      }
+
+      function patch(id) {
+        const updates = {
+          name: "Lasses Wine",
+          isGood: true,
+        };
+
+        fetch("https://uwrwptibotlxlvcdeicv.supabase.co/rest/v1/wines?id=eq." + id, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
+          },
+          body: JSON.stringify(updates),
+        })
+          .then((e) => e.json())
+          .then((e) => get());
+      }
+    </script>
+  </body>
+</html>

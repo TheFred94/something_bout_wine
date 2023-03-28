@@ -24,10 +24,10 @@ main {
   grid-column: 2 / 3;
 }
 
-.year:invalid {
-  background-color: red;
+input[type="number"]:valid {
+  background-color: palegreen;
 }
 
-.wine_name:invalid {
-  background-color: red;
+input[type="text"]:valid {
+  background-color: palegreen;
 }

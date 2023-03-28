@@ -11,8 +11,8 @@
   <body>
     <section id="wine_form">
       <form>
-        <label type="text" class="wine_name" aria-required="true">Name:</label>
-        <input />
+        <label>Name:</label>
+        <input type="text" class="wine_name" minlength="3" required />
         <br />
         <input type="radio" value="red" name="wine_type" />
         <label for="red">Red</label><br />
@@ -21,7 +21,7 @@
         <input type="radio" value="rose" name="wine_type" />
         <label for="red">Rosé</label><br />
         <label>Year:</label>
-        <input aria-required="true" type="number" class="year" minlength="4" maxlength="4" /><br />
+        <input type="text" class="year" minlength="4" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required / ><br />
         <label>Is it good?</label><br />
         <input type="radio" value="rose" name="isgood" />
         <label for="yes">Yes</label><br />

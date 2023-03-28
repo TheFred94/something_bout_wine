@@ -95,6 +95,7 @@
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            Prefer: "return=representation",
             apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcmpncnJ4aWttcmNsbnNndnN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5MTkzOTYsImV4cCI6MTk5NTQ5NTM5Nn0.rN5OmhBVQka_Vn1B8YD-G0UmLj8BDSRgQCw-thSpQgs",
           },
           body: JSON.stringify(updates),

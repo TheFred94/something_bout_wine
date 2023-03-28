@@ -11,7 +11,7 @@
   <body>
     <section id="wine_form">
       <form>
-        <label>Name:</label>
+        <label>Wine name:</label><br />
         <input type="text" class="wine_name" minlength="3" required />
         <br />
         <input type="radio" value="red" name="wine_type" />
@@ -20,7 +20,7 @@
         <label for="red">White</label><br />
         <input type="radio" value="rose" name="wine_type" />
         <label for="red">Rosé</label><br />
-        <label>Year:</label>
+        <label>Year:</label><br />
         <input type="text" class="year" minlength="4" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required / ><br />
         <label>Is it good?</label><br />
         <input type="radio" value="rose" name="isgood" />
@@ -46,7 +46,7 @@
           <option value="germany">Germany</option></select
         ><br />
 
-        <label for="grapes">Choose the grape:</label><br />
+        <label for="grapes">Grape:</label><br />
         <select aria-required="true" id="grapes" name="grapes">
           <option type="checkbox" value="none"></option>
           <option value="spain">Spain</option>
@@ -56,7 +56,7 @@
           <option value="germany">Germany</option></select
         ><br />
 
-        <button id="post">POST</button>
+        <button id="post">Submit</button>
       </form>
     </section>
     <main></main>

@@ -4,10 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Wines delight</title>
   </head>
 
   <body>
+    <section id="wine_form">
+      <form>
+        <label>Name:</label>
+        <input />
+        <br />
+        <input type="radio" value="red" name="wine_type" />
+        <label for="red">Red</label><br />
+        <input type="radio" value="white" name="wine_type" />
+        <label for="red">White</label><br />
+        <input type="radio" value="rose" name="wine_type" />
+        <label for="red">Rosé</label><br />
+        <label>Year:</label>
+        <input /><br />
+        <label>Is it good?</label><br />
+        <input type="radio" value="rose" name="isgood" />
+        <label for="yes">Yes</label><br />
+        <input type="radio" value="rose" name="isgood" />
+        <label for="no">No</label><br />
+        <label for="countries">Choose a country:</label><br />
+        <select id="countries" name="countries">
+          <option value="spain">Spain</option>
+          <option value="italy">Italy</option>
+          <option value="usa">USA</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option></select
+        ><br />
+        <label for="regions">Choose a region:</label><br />
+        <select id="regions" name="regions">
+          <option value="spain">Spain</option>
+          <option value="italy">Italy</option>
+          <option value="usa">USA</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option></select
+        ><br />
+        <label>Choose the grapes</label>
+        <label for="grapes">Choose a region:</label><br />
+        <select id="grapes" name="grapes">
+          <option value="spain">Spain</option>
+          <option value="italy">Italy</option>
+          <option value="usa">USA</option>
+          <option value="france">France</option>
+          <option value="germany">Germany</option></select
+        ><br />
+
+        <button id="post">POST</button>
+      </form>
+    </section>
     <main></main>
     <template>
       <article>
@@ -16,7 +64,6 @@
         <button class="delete">DELETE WINE</button>
       </article>
     </template>
-    <button id="post">POST</button>
     <script>
       document.querySelector("#post").addEventListener("click", post);
       function get() {

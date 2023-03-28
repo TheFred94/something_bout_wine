@@ -23,3 +23,11 @@ main {
   height: 50px;
   grid-column: 2 / 3;
 }
+
+.year:invalid {
+  background-color: red;
+}
+
+.wine_name:invalid {
+  background-color: red;
+}

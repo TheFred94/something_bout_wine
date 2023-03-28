@@ -11,7 +11,7 @@
   <body>
     <section id="wine_form">
       <form>
-        <label>Name:</label>
+        <label type="text" class="wine_name" aria-required="true">Name:</label>
         <input />
         <br />
         <input type="radio" value="red" name="wine_type" />
@@ -21,31 +21,34 @@
         <input type="radio" value="rose" name="wine_type" />
         <label for="red">Rosé</label><br />
         <label>Year:</label>
-        <input /><br />
+        <input aria-required="true" type="number" class="year" minlength="4" maxlength="4" /><br />
         <label>Is it good?</label><br />
         <input type="radio" value="rose" name="isgood" />
         <label for="yes">Yes</label><br />
         <input type="radio" value="rose" name="isgood" />
         <label for="no">No</label><br />
-        <label for="countries">Choose a country:</label><br />
-        <select id="countries" name="countries">
+        <label for="countries">Country:</label><br />
+        <select aria-required="true" id="countries" name="countries">
+          <option value="none"></option>
           <option value="spain">Spain</option>
           <option value="italy">Italy</option>
           <option value="usa">USA</option>
           <option value="france">France</option>
           <option value="germany">Germany</option></select
         ><br />
-        <label for="regions">Choose a region:</label><br />
-        <select id="regions" name="regions">
+        <label for="regions">Region:</label><br />
+        <select aria-required="true" id="regions" name="regions">
+          <option value="none"></option>
           <option value="spain">Spain</option>
           <option value="italy">Italy</option>
           <option value="usa">USA</option>
           <option value="france">France</option>
           <option value="germany">Germany</option></select
         ><br />
-        <label>Choose the grapes</label>
-        <label for="grapes">Choose a region:</label><br />
-        <select id="grapes" name="grapes">
+
+        <label for="grapes">Choose the grape:</label><br />
+        <select aria-required="true" id="grapes" name="grapes">
+          <option type="checkbox" value="none"></option>
           <option value="spain">Spain</option>
           <option value="italy">Italy</option>
           <option value="usa">USA</option>

@@ -37,7 +37,7 @@ export function post() {
     isGood: true,
   };
 
-  fetch(ENDPOINT + "?id=eq.", {
+  fetch(ENDPOINT, {
     method: "post",
     headers: {
       "Content-Type": "application/json",

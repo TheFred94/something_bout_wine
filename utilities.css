@@ -1,0 +1,16 @@
+/* ! This sheet controls the state of the input field wether they are valid, invalid etc. */
+
+/* Changes the color on the input field when it's valid */
+input[type="number"]:valid {
+  background-color: palegreen;
+}
+
+input[type="text"]:valid {
+  background-color: palegreen;
+}
+
+/* Sets the color of the radio button */
+input[type="radio"] {
+  accent-color: green;
+  cursor: pointer;
+}

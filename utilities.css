@@ -14,3 +14,21 @@ input[type="radio"] {
   accent-color: green;
   cursor: pointer;
 }
+
+input,
+select {
+  outline: 0;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+label {
+  align-items: center;
+}
+
+#wine_form {
+  background-color: var(--grey);
+  padding: 2rem 0 2rem 2rem;
+}

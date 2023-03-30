@@ -6,6 +6,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
+  --grey: #f2f2f2;
 }
 
 @layer main {
@@ -18,6 +20,19 @@
   article {
     width: 200px;
     height: 80px;
+  }
+
+  small {
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  legend {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 1rem;
   }
 
   main {

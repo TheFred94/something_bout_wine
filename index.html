@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet" />
     <title>Wines delight</title>
   </head>
 
   <body>
     <form id="wine_form">
       <fieldset class="wine_name">
+        <small>What's the name of the wine?</small>
         <legend>Wine name:</legend>
         <input type="text" class="wine_name" minlength="3" required />
       </fieldset>
 
       <fieldset class="wine_type">
         <legend>Type:</legend>
-
+        <small>What type is the wine?</small>
         <label for="red"><input type="radio" id="red" name="wine_type" />Red</label>
 
         <label for="white"><input type="radio" id="white" name="wine_type" />White</label>
@@ -27,11 +31,13 @@
 
       <fieldset class="wine_year">
         <legend>Year:</legend>
+        <small>Enter the year YYYY</small>
         <input type="text" class="year" minlength="4" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
       </fieldset>
 
       <fieldset class="good_bad">
         <legend>Is it good?</legend>
+        <small>Yes or no, wether the wine is good</small>
 
         <label for="yes"><input type="radio" id="yes" name="isgood" />Yes</label>
 
@@ -40,7 +46,7 @@
 
       <fieldset class="countries">
         <legend for="countries">Country:</legend>
-
+        <small>What country is the wine from?</small>
         <select aria-required="true" id="countries" name="countries">
           <option value="none"></option>
           <option value="spain">Spain</option>
@@ -53,7 +59,7 @@
 
       <fieldset class="region">
         <legend for="regions">Region:</legend>
-
+        <small>What region is the wine from?</small>
         <select aria-required="true" id="regions" name="regions">
           <option value="none"></option>
           <option value="spain">Spain</option>
@@ -66,7 +72,7 @@
 
       <fieldset class="grapes">
         <legend for="grapes">Grape:</legend>
-
+        <small>What sort of grape is it made from?</small>
         <select aria-required="true" id="grapes" name="grapes">
           <option type="checkbox" value="none"></option>
           <option value="spain">Spain</option>

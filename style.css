@@ -22,6 +22,7 @@ main {
   width: 100px;
   height: 50px;
   grid-column: 2 / 3;
+  margin-top: 2rem;
 }
 
 input[type="number"]:valid {
@@ -30,4 +31,19 @@ input[type="number"]:valid {
 
 input[type="text"]:valid {
   background-color: palegreen;
+}
+
+div {
+  margin-top: 2rem;
+}
+
+fieldset {
+  border-style: none;
+}
+
+[type="radio"] {
+  height: 20px;
+  width: 20px;
+  border-style: solid;
+  accent-color: green;
 }

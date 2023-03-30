@@ -11,50 +11,81 @@
   <body>
     <section id="wine_form">
       <form>
-        <label>Wine name:</label><br />
-        <input type="text" class="wine_name" minlength="3" required />
-        <br />
-        <input type="radio" value="red" name="wine_type" />
-        <label for="red">Red</label><br />
-        <input type="radio" value="white" name="wine_type" />
-        <label for="red">White</label><br />
-        <input type="radio" value="rose" name="wine_type" />
-        <label for="red">Rosé</label><br />
-        <label>Year:</label><br />
-        <input type="text" class="year" minlength="4" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required / ><br />
-        <label>Is it good?</label><br />
-        <input type="radio" value="rose" name="isgood" />
-        <label for="yes">Yes</label><br />
-        <input type="radio" value="rose" name="isgood" />
-        <label for="no">No</label><br />
-        <label for="countries">Country:</label><br />
-        <select aria-required="true" id="countries" name="countries">
-          <option value="none"></option>
-          <option value="spain">Spain</option>
-          <option value="italy">Italy</option>
-          <option value="usa">USA</option>
-          <option value="france">France</option>
-          <option value="germany">Germany</option></select
-        ><br />
-        <label for="regions">Region:</label><br />
-        <select aria-required="true" id="regions" name="regions">
-          <option value="none"></option>
-          <option value="spain">Spain</option>
-          <option value="italy">Italy</option>
-          <option value="usa">USA</option>
-          <option value="france">France</option>
-          <option value="germany">Germany</option></select
-        ><br />
-
-        <label for="grapes">Grape:</label><br />
-        <select aria-required="true" id="grapes" name="grapes">
-          <option type="checkbox" value="none"></option>
-          <option value="spain">Spain</option>
-          <option value="italy">Italy</option>
-          <option value="usa">USA</option>
-          <option value="france">France</option>
-          <option value="germany">Germany</option></select
-        ><br />
+        <div>
+          <fieldset>
+            <legend>Wine name:</legend>
+            <input type="text" class="wine_name" minlength="3" required />
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend>Type:</legend>
+            <input type="radio" value="red" name="wine_type" />
+            <label for="red">Red</label><br />
+            <input type="radio" value="white" name="wine_type" />
+            <label for="red">White</label><br />
+            <input type="radio" value="rose" name="wine_type" />
+            <label for="red">Rosé</label><br />
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend>Year:</legend>
+            <input type="text" class="year" minlength="4" maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required / >
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend>Is it good?</legend>
+            <br />
+            <input type="radio" value="rose" name="isgood" />
+            <label for="yes">Yes</label><br />
+            <input type="radio" value="rose" name="isgood" />
+            <label for="no">No</label>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend for="countries">Country:</legend>
+            <br />
+            <select aria-required="true" id="countries" name="countries">
+              <option value="none"></option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="usa">USA</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+            </select>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend for="regions">Region:</legend>
+            <br />
+            <select aria-required="true" id="regions" name="regions">
+              <option value="none"></option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="usa">USA</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+            </select>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend for="grapes">Grape:</legend>
+            <br />
+            <select aria-required="true" id="grapes" name="grapes">
+              <option type="checkbox" value="none"></option>
+              <option value="spain">Spain</option>
+              <option value="italy">Italy</option>
+              <option value="usa">USA</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+            </select>
+          </fieldset>
+        </div>
 
         <button id="post">Submit</button>
       </form>
